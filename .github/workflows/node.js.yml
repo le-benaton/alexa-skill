@@ -29,19 +29,28 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-v3-dependencies-
 
-      # serverless frameworkのインストール
-      - name: Install Serverless Framework
-        run: npm install -g serverless
-      - name: Serverless Authentication
-        run: sls config credentials -k ${{ secrets.AWS_ACCESS_KEY }} -s ${{ secrets.AWS_SECRET_KEY }} -p aws
-
       # パッケージインストール
       - run: |
           cd lambda
           npm ci
-          npm run build
 
-      # APIのデプロイ
-      - name: Deploy to AWS
-        run: sls deploy
-        working-directory: "./lambda"
+      - name: Install awscli
+        run: |
+          brew update
+          brew install awscli
+          brew upgrade
+          aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY }}
+          aws configure set aws_secret_access_key ${{ secrets.AWS_ACCESS_KEY }} ${{ secrets.AWS_SECRET_KEY }}
+          aws configure set default.region ap-northeast-1
+
+      # serverless frameworkのインストール
+      - name: ASK Authentication
+        run: |
+          npm ci
+          npm run configure
+          npm run deploy
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_KEY }}
+
+

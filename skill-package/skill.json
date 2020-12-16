@@ -2,24 +2,26 @@
   "manifest": {
     "publishingInformation": {
       "locales": {
-        "en-US": {
-          "summary": "Sample Short Description",
+        "ja-JP": {
+          "summary": "西宮・夙川のフレンチレストラン「ル ベナトン」の最新のお知らせをお届けします。",
           "examplePhrases": [
-            "Alexa open hello world",
-            "hello",
-            "help"
+            "最新情報を教えて"
           ],
-          "name": "benaton-alexa-skill",
-          "description": "Sample Full Description"
+          "name": "ベナトン",
+          "description": "西宮・夙川のフレンチレストラン「ル ベナトン」の最新のお知らせをお届けします。"
         }
       },
-      "isAvailableWorldwide": true,
+      "isAvailableWorldwide": false,
       "testingInstructions": "Sample Testing Instructions.",
-      "category": "KNOWLEDGE_AND_TRIVIA",
-      "distributionCountries": []
+      "category": "NEWS",
+      "distributionCountries": ["JP"]
     },
     "apis": {
-      "custom": {}
+      "custom": {
+        "endpoint": {
+          "uri": "arn:aws:lambda:ap-northeast-1:023195867015:function:ask-benaton-alexa-skill-default-default-1608101470649"
+        }
+      }
     },
     "manifestVersion": "1.0"
   }

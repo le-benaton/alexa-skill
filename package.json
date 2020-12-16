@@ -1,0 +1,22 @@
+{
+  "name": "benaton-alexa-skill",
+  "version": "1.0.0",
+  "description": "ベナトンの最新のお知らせをお届けするアレクサスキルです",
+  "scripts": {
+    "configure": "ask configure --no-browser",
+    "deploy": "ask deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/le-benaton/alexa-skill.git"
+  },
+  "author": "MASAHIKO SAKAKIBARA <sakakibara@rdlabo.jp>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/le-benaton/alexa-skill/issues"
+  },
+  "homepage": "https://github.com/le-benaton/alexa-skill#readme",
+  "dependencies": {
+    "ask-cli": "^2.21.0"
+  }
+}

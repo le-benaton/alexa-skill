@@ -1,7 +1,6 @@
 {
-  "name": "hello-world",
+  "name": "lambda",
   "version": "0.0.0",
-  "description": "alexa utility for quickly building skills",
   "main": "/index.js",
   "scripts": {
     "build": "webpack",
@@ -15,8 +14,7 @@
     "@ask-utils/speech-script": "3.x",
     "@talkyjs/core": "1.x",
     "ask-sdk-core": "^2.6.0",
-    "ask-sdk-model": "^1.18.0",
-    "serverless-prune-plugin": "^1.4.3"
+    "ask-sdk-model": "^1.18.0"
   },
   "directories": {
     "lib": "src",
