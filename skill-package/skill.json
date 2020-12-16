@@ -14,7 +14,9 @@
       "isAvailableWorldwide": false,
       "testingInstructions": "Sample Testing Instructions.",
       "category": "NEWS",
-      "distributionCountries": ["JP"]
+      "distributionCountries": [
+        "JP"
+      ]
     },
     "apis": {
       "custom": {

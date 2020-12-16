@@ -17,14 +17,9 @@
                 },
                 {
                     "name": "HelloWorldIntent",
-                    "slots": [
-                        {
-                            "name": "Type",
-                            "type": "AMAZON.SearchQuery"
-                        }
-                    ],
+                    "slots": [],
                     "samples": [
-                        "{Type}を教えて"
+                        "ベナトンの最新情報を教えて"
                     ]
                 },
                 {

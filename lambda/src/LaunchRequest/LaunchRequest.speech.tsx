@@ -4,21 +4,30 @@ import {
     SpeechScriptJSX,
 } from '@ask-utils/speech-script'
 
+export interface IData {
+    title: string;
+    body: string;
+}
+
 export class LaunchRequestScript extends SpeechScriptJSX {
+    private data: string = '';
+
+    setData(data: IData[]) {
+        this.data = data.map(item => {
+            return `「${item.title.replace(/<("[^"]*"|'[^']*'|[^'">])*>/g,'')}」についてご案内します。${item.body.replace(/<("[^"]*"|'[^']*'|[^'">])*>/g,'')}`
+        }).join('')
+    }
+
     speech() {
         return (
-            <speak>
-                <p>Hello! It's a nice development. How are you?</p>
-            </speak>
+            <speak><p>{this.data}</p></speak>
         )
     }
-    
+
     reprompt() {
         return (
-            <speak>
-                <p>How are you?</p>
-            </speak>
+          <speak><p>{this.data}</p></speak>
         )
     }
-    
+
 }
