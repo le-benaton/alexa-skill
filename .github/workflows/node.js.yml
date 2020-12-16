@@ -39,6 +39,7 @@ jobs:
       - run: |
           cd lambda
           npm ci
+          npm run build
 
       # APIのデプロイ
       - name: Deploy to AWS
