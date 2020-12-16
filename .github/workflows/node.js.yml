@@ -33,7 +33,7 @@ jobs:
       - name: Install Serverless Framework
         run: npm install -g serverless
       - name: Serverless Authentication
-        run: sls config credentials -k ${{ secrets.AWS_ACCESS_KEY }} -s ${{ secrets.AWS_SECRET_KEY }} -p aws --profile odss
+        run: sls config credentials -k ${{ secrets.AWS_ACCESS_KEY }} -s ${{ secrets.AWS_SECRET_KEY }} -p aws
 
       # パッケージインストール
       - run: |
