@@ -1,0 +1,46 @@
+name: CI
+on:
+  push:
+    branch: master
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+      # 環境構築
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      # パッケージのキャッシュ
+      - name: Use cached node_modules
+        uses: actions/cache@v2
+        with:
+          path: |
+            **/node_modules
+          key: ${{ runner.os }}-v3-dependencies-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-v3-dependencies-
+
+      # serverless frameworkのインストール
+      - name: Install Serverless Framework
+        run: npm install -g serverless
+      - name: Serverless Authentication
+        run: sls config credentials -k ${{ secrets.AWS_ACCESS_KEY }} -s ${{ secrets.AWS_SECRET_KEY }} -p aws --profile odss
+
+      # パッケージインストール
+      - run: |
+          cd lambda
+          npm ci
+
+      # APIのデプロイ
+      - name: Deploy to AWS
+        run: sls deploy
+        working-directory: "./lambda"
