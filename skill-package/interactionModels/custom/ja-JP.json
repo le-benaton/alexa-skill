@@ -1,7 +1,7 @@
 {
     "interactionModel": {
         "languageModel": {
-            "invocationName": "hello world",
+            "invocationName": "ベナトン",
             "intents": [
                 {
                     "name": "AMAZON.CancelIntent",
@@ -17,15 +17,14 @@
                 },
                 {
                     "name": "HelloWorldIntent",
-                    "slots": [],
+                    "slots": [
+                        {
+                            "name": "Type",
+                            "type": "AMAZON.SearchQuery"
+                        }
+                    ],
                     "samples": [
-                        "hello",
-                        "how are you",
-                        "say hi world",
-                        "say hi",
-                        "hi",
-                        "say hello world",
-                        "say hello"
+                        "{Type}を教えて"
                     ]
                 },
                 {
@@ -37,4 +36,3 @@
         }
     }
   }
-  
