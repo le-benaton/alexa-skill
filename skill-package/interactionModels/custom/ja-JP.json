@@ -1,7 +1,7 @@
 {
     "interactionModel": {
         "languageModel": {
-            "invocationName": "ベナトン情報",
+            "invocationName": "ベナトン",
             "intents": [
                 {
                     "name": "AMAZON.CancelIntent",
