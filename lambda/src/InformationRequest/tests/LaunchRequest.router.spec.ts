@@ -3,7 +3,7 @@ import { RequestHandlerFactory } from '@talkyjs/core';
 import { RequestHandler } from 'ask-sdk-core';
 import { InformationRequestRouter } from '../InformationRequest.router'
 
-describe('LaunchRequestRouter', () => {
+describe('InformationRequestRouter', () => {
   let handler: RequestHandler;
   beforeEach(() => {
     handler = RequestHandlerFactory.create(InformationRequestRouter);
@@ -16,7 +16,7 @@ describe('LaunchRequestRouter', () => {
 
     it('should return false when given a not IntentRequest', async () => {
       const handlerInput = new HandlerInputCreator().createIntentRequest({
-        name: "LaunchRequest",
+        name: "IntentRequest",
         confirmationStatus: 'NONE'
       });
       await expect(handler.canHandle(handlerInput)).resolves.toMatchSnapshot();

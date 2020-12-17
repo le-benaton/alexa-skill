@@ -22,12 +22,15 @@
                 },
                 {
                     "name": "InformationIntent",
-                    "slots": [],
+                    "slots": [
+                        {
+                            "name": "InformationType",
+                            "type": "INFORMATION_TYPE"
+                        }
+                    ],
                     "samples": [
-                        "お知らせを教えて",
-                        "最新情報を教えて",
-                        "お知らせ",
-                        "最新情報"
+                        "{InformationType} を教えて",
+                        "{InformationType}"
                     ]
                 },
                 {
@@ -35,7 +38,35 @@
                     "samples": []
                 }
             ],
-            "types": []
+            "types": [
+                {
+                    "name": "INFORMATION_TYPE",
+                    "values": [
+                        {
+                            "id": "NEWS",
+                            "name": {
+                                "value": "NEWS",
+                                "synonyms": [
+                                    "お知らせ",
+                                    "最新情報",
+                                    "ニュース"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "HOLIDAY",
+                            "name": {
+                                "value": "HOLIDAY",
+                                "synonyms": [
+                                    "おやすみ",
+                                    "やすみ",
+                                    "定休日"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
         }
     }
   }

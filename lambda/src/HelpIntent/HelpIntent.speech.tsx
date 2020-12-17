@@ -8,11 +8,11 @@ export class HelpIntentScript extends SpeechScriptJSX {
     speech() {
         return (
             <speak>
-                <p>Hello! It's a nice development. How are you?</p>
+                <p>「お知らせ」と「定休日」のどちらかを指定してください</p>
             </speak>
         )
     }
-    
+
     reprompt() {
         return (
             <speak>
@@ -20,5 +20,5 @@ export class HelpIntentScript extends SpeechScriptJSX {
             </speak>
         )
     }
-    
+
 }

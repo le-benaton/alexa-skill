@@ -1,23 +1,24 @@
 import { Router } from "@talkyjs/core";
+import { getSlotValue } from 'ask-sdk-core';
 
-import { InformationRequestScript } from './InformationRequest.speech'
 import axios from 'axios';
-import { IData } from './InformationRequest.speech';
-
-const getInformation = async () => {
-    const data = await axios.get('https://www.benaton.net/api/news.json');
-    return data;
-}
+import { IData, getInformation, IInformationType, InformationRequestScript } from './InformationRequest.speech';
 
 export const InformationRequestRouter: Router = {
     requestType: "IntentRequest",
     intentName: "InformationIntent",
 
     handler: async (handlerInput) => {
+        const informationType = getSlotValue(handlerInput.requestEnvelope, 'InformationType') as IInformationType;
+        console.log({
+            informationType,
+            request: handlerInput.requestEnvelope,
+        });
         const { data } = await getInformation();
 
         const script = new InformationRequestScript(handlerInput)
-        script.setData(data as IData[]);
+
+        script.setData(data as IData[], informationType);
         return script
             .createResponseBuilder()
             .withShouldEndSession(true)

@@ -1,5 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`InformationRequestRouter canHandle should return false when given a not IntentRequest 1`] = `false`;
+
 exports[`LaunchRequestRouter canHandle should return false when given a not IntentRequest 1`] = `false`;
 
 exports[`LaunchRequestRouter handle should match snapshot 1`] = `

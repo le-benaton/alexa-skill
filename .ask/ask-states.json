@@ -4,11 +4,11 @@
     "default": {
       "skillId": "amzn1.ask.skill.e848557b-51f8-42f6-b472-5ac704f11e95",
       "skillMetadata": {
-        "lastDeployHash": "0JHoCZow6MguE1HBglTy+oImaH4="
+        "lastDeployHash": "FQcT8IzTnXVbFEvyyZmXYKpvKMo="
       },
       "code": {
         "default": {
-          "lastDeployHash": "USlwop2J9jKbohDR4XqJDt9xpWg="
+          "lastDeployHash": "kPQUWoyobCqYUtqF1qdViUQB34s="
         }
       },
       "skillInfrastructure": {
@@ -17,8 +17,8 @@
             "default": {
               "lambda": {
                 "arn": "arn:aws:lambda:ap-northeast-1:023195867015:function:ask-benaton-alexa-skill-default-default-1608101470649",
-                "lastModified": "2020-12-17T08:37:13.128+0000",
-                "revisionId": "2c4c14ab-6c55-4d18-ac49-599cfbe6d64a"
+                "lastModified": "2020-12-17T10:04:55.629+0000",
+                "revisionId": "05edaeeb-caa6-427b-9e33-c77e412465a8"
               },
               "iamRole": "arn:aws:iam::023195867015:role/ask-lambda-benaton-alexa-skill-1608101468860"
             }
