@@ -1,7 +1,7 @@
 {
     "interactionModel": {
         "languageModel": {
-            "invocationName": "ベナトン",
+            "invocationName": "ベナトンの情報",
             "intents": [
                 {
                     "name": "AMAZON.CancelIntent",
@@ -18,9 +18,16 @@
                 {
                     "name": "HelloWorldIntent",
                     "slots": [],
+                    "samples": []
+                },
+                {
+                    "name": "InformationIntent",
+                    "slots": [],
                     "samples": [
+                        "お知らせを教えて",
                         "最新情報を教えて",
-                        "お知らせを教えて"
+                        "お知らせ",
+                        "最新情報"
                     ]
                 },
                 {

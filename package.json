@@ -1,7 +1,7 @@
 {
   "name": "benaton-alexa-skill",
   "version": "1.0.0",
-  "description": "ベナトンの最新のお知らせをお届けするアレクサスキルです",
+  "description": "ベナトンの最新の情報をお届けするアレクサスキルです",
   "scripts": {
     "configure": "ask configure --no-browser",
     "deploy": "ask deploy"

@@ -1,5 +1,6 @@
 import { SkillFactory, TalkyJSSkillConfig, SkillHandler } from '@talkyjs/core'
 import { CustomSkillBuilder } from 'ask-sdk-core'
+import { InformationRequestRouter } from './InformationRequest/InformationRequest.router';
 import { LaunchRequestRouter } from './LaunchRequest/LaunchRequest.router'
 import { HelpIntentRouter } from './HelpIntent/HelpIntent.router'
 import { StopAndCancelAndNoIntentRouter } from './StopAndCancelAndNoIntent/StopAndCancelAndNoIntent.router'
@@ -30,6 +31,7 @@ const config: TalkyJSSkillConfig = {
  */
 export const skillFactory = SkillFactory.launch(config)
 .addRequestRouters([
+    InformationRequestRouter,
     LaunchRequestRouter,
     HelpIntentRouter,
     StopAndCancelAndNoIntentRouter,
@@ -42,7 +44,7 @@ export const skillBuilder: CustomSkillBuilder = skillFactory.getSkill()
 
 /**
  * Skill handler creator
- * @param skill 
+ * @param skill
  */
 export const createSkillHandler = (skill: CustomSkillBuilder = skillBuilder): SkillHandler => {
     return async (event, context) => {
@@ -52,7 +54,7 @@ export const createSkillHandler = (skill: CustomSkillBuilder = skillBuilder): Sk
 
 /**
  * Lambda handler
- * @param event 
- * @param context 
+ * @param event
+ * @param context
  */
 export const handler: SkillHandler = createSkillHandler()
